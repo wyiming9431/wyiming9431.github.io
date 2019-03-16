@@ -210,10 +210,23 @@
 				</div>
 			</div>
 		</footer>
+		<div id="loading">
+			<div id="loading-center">
+				<div id="loading-center-absolute">
+					<div class="object" id="object_one"></div>
+					<div class="object" id="object_two"></div>
+					<div class="object" id="object_three"></div>
+				</div>
+			</div>
+		</div>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script>
 			(function(){
+				$(window).load(function() {
+					$("#loading").fadeOut(500);
+				})
+				
 				$('.languages').click(function(e){
 					$(this).toggleClass('active');
 					e.stopPropagation();
