@@ -46,7 +46,7 @@ section{
         position: fixed;
         width: 100%;
         display: inline-block;
-        z-index: 1!important;
+        z-index: 999!important;
         transition: background .5s;
         border-color: transparent;
         background: transparent;
@@ -73,7 +73,7 @@ section{
             }
             .navbar-brand{
                 height: 40px;
-                width: 100px;
+                 width: 120px;
             }
              .languages{
               display: none;   
@@ -439,7 +439,7 @@ section{
                 &:hover{
                     img{
                         opacity: 0.9;
-                        transform: scale(1.2);
+                        transform: scale(1);
                     }
                 }
             }
@@ -566,14 +566,24 @@ footer{
     .container-fluid.container{
         margin: 0;
     }
+    .header .navbar .navbar-header .navbar-brand{
+         height: 40px;
+        width: 100px;
+    }
     .investmentCase{
          .body{
               ul{
                    li{
                        height: 100px;
                        img{
-                           width: 60px;
+                           transform: scale(0.6);
                        }
+                       &:hover{
+                            img{
+                                opacity: 0.9;
+                                transform: scale(0.8);
+                            }
+                        }
                    }
               }
          }
@@ -606,7 +616,7 @@ footer{
     height: 100%;
     width: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     margin-top: 0px;
     top: 0px;
 }
