@@ -86,7 +86,7 @@ section{
                 color: white;
                 transition: color .2s;
                 position: relative;
-                &:hover,&.active{
+                &.active{
                     &::after{
                         content: ' ';
                         position: absolute;
@@ -385,13 +385,15 @@ section{
     }
     .about{
         color: white;
-        padding-bottom: 120px;
+        padding: 100px 0 150px;
         div.body{
             font-size: 16px;
             color: #DEDDDE;
             padding: 0 77px;
             p{
                 text-align: justify;
+                line-height: 32px;
+                margin-bottom: 30px;
             }
             h3{
                font-size:18px;
@@ -410,12 +412,12 @@ section{
     .body{
         ul{
             display: flex;
-            display: flex;
+            flex-wrap: wrap;
             margin: 0 -25px;
             padding-left: 0;
             li{
+                flex-basis: 187px;
                 cursor: pointer;
-                flex: 1;
                 text-align: center;
                 position: relative;
                 height: 150px;
@@ -558,6 +560,20 @@ footer{
 /*
 *Solving Size Compatibility
 */
+@media (min-width: 992px){
+    .header .navbar ul li.nav-stick{
+        &:hover{
+            &::after{
+                content: ' ';
+                position: absolute;
+                bottom: 0;
+                border-bottom: 2px solid red;
+                left: 10px;
+                right: 10px;
+            }
+        }
+    }
+}
 @media (max-width: 991px){
     .container{
         width: auto;
@@ -567,21 +583,31 @@ footer{
         margin: 0;
     }
     .header .navbar .navbar-header .navbar-brand{
-         height: 40px;
+        height: 40px;
         width: 100px;
     }
+    .home{
+        min-height: 100vh;
+    }
     .investmentCase{
+        padding: 150px 0;
          .body{
               ul{
                    li{
                        height: 100px;
+                       flex-basis: 33.3%;
+                       min-width: 200px;
+                       margin-bottom: 100px;
                        img{
-                           transform: scale(0.6);
+                           transform: scale(1);
+                       }
+                       span{
+                           bottom:-50px
                        }
                        &:hover{
                             img{
                                 opacity: 0.9;
-                                transform: scale(0.8);
+                                transform: scale(1.2);
                             }
                         }
                    }
@@ -589,15 +615,18 @@ footer{
          }
     }
     .partner{
+        padding: 150px 0;
         .body{
              ul{
+                 flex-direction: column;
                   li{
                       flex: auto;
-                      margin-right: 15px;
-                      margin-bottom: 20px;
+                      margin-bottom: 40px;
+                      margin-right: 0;
                       a{
-                          font-size:12px;
                           padding: 0 10px;
+                          height: 65px;
+                          line-height: 65px;
                       }
                   }
                   &:last-child{

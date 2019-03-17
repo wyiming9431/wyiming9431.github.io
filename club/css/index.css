@@ -78,7 +78,6 @@ section {
   transition: color 0.2s;
   position: relative;
 }
-.header .navbar ul li.nav-stick:hover::after,
 .header .navbar ul li.nav-stick.active::after {
   content: ' ';
   position: absolute;
@@ -348,7 +347,7 @@ section {
 }
 .banner .about {
   color: white;
-  padding-bottom: 120px;
+  padding: 100px 0 150px;
 }
 .banner .about div.body {
   font-size: 16px;
@@ -357,6 +356,8 @@ section {
 }
 .banner .about div.body p {
   text-align: justify;
+  line-height: 32px;
+  margin-bottom: 30px;
 }
 .banner .about div.body h3 {
   font-size: 18px;
@@ -371,12 +372,13 @@ section {
 }
 .investmentCase .body ul {
   display: flex;
+  flex-wrap: wrap;
   margin: 0 -25px;
   padding-left: 0;
 }
 .investmentCase .body ul li {
+  flex-basis: 187px;
   cursor: pointer;
-  flex: 1;
   text-align: center;
   position: relative;
   height: 150px;
@@ -503,6 +505,16 @@ footer .body .right p a:hover {
 /*
 *Solving Size Compatibility
 */
+@media (min-width: 992px) {
+  .header .navbar ul li.nav-stick:hover::after {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    border-bottom: 2px solid red;
+    left: 10px;
+    right: 10px;
+  }
+}
 @media (max-width: 991px) {
   .container {
     width: auto;
@@ -515,24 +527,43 @@ footer .body .right p a:hover {
     height: 40px;
     width: 100px;
   }
+  .home {
+    min-height: 100vh;
+  }
+  .investmentCase {
+    padding: 150px 0;
+  }
   .investmentCase .body ul li {
     height: 100px;
+    flex-basis: 33.3%;
+    min-width: 200px;
+    margin-bottom: 100px;
   }
   .investmentCase .body ul li img {
-    transform: scale(0.6);
+    transform: scale(1);
+  }
+  .investmentCase .body ul li span {
+    bottom: -50px;
   }
   .investmentCase .body ul li:hover img {
     opacity: 0.9;
-    transform: scale(0.8);
+    transform: scale(1.2);
+  }
+  .partner {
+    padding: 150px 0;
+  }
+  .partner .body ul {
+    flex-direction: column;
   }
   .partner .body ul li {
     flex: auto;
-    margin-right: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    margin-right: 0;
   }
   .partner .body ul li a {
-    font-size: 12px;
     padding: 0 10px;
+    height: 65px;
+    line-height: 65px;
   }
   .partner .body ul:last-child li:first-child {
     flex: auto;
