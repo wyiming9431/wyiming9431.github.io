@@ -39,10 +39,10 @@
 							<li class="nav-stick">
 								<span>投资案例</span>
 							</li>
-							<li class="nav-stick go" go="token">
+							<li class="nav-stick">
 								<span>战略伙伴</span>
 							</li>
-							<li class="nav-stick go" go="roadmap">
+							<li class="nav-stick">
 								<span>联系方式</span>
 							</li>
 							<li class="dropdown nav-stick">
@@ -113,8 +113,6 @@
 						<img src="image/server_logo/5-05.png"/>
 						<span>TNB</span>
 					</li>
-				</ul>
-				<ul>
 					<li>
 						<img src="image/server_logo/5-06.png"/>
 						<span>HSR</span>
@@ -238,7 +236,7 @@
 				$('.nav-stick').click(function(){
 					let i = $(this).index()
 					if(!$(this).hasClass('dropdown')){
-						 $('html').animate({
+						 $('body,html').animate({
 				            scrollTop: $('.sc').eq(i).offset().top - 80
 				        }, 1000);
 					}
@@ -246,8 +244,11 @@
 				function callback(){
 					let size = 0
 				    $('.sc').each(function(i){
-				    	if($(document).scrollTop() + $(window).height() - 80 > $(this).offset().top){
+				    	if($(document).scrollTop() + $(window).height() - 150 > $(this).offset().top){
 				    		size = i
+				    	}
+				    	if($(document).scrollTop() > $(document).height()- $(window).height() + 50){
+				    		size = 4
 				    	}
 				    })
 				    $('.nav-stick').removeClass('active').eq(size).addClass('active')

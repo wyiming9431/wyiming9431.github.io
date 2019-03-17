@@ -222,10 +222,11 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script>
-			(function(){
+				(function(){
 				$(window).load(function() {
 					$("#loading").fadeOut(500);
 				})
+				
 				$('.languages').click(function(e){
 					$(this).toggleClass('active');
 					e.stopPropagation();
@@ -236,7 +237,7 @@
 				$('.nav-stick').click(function(){
 					let i = $(this).index()
 					if(!$(this).hasClass('dropdown')){
-						 $('html').animate({
+						 $('body,html').animate({
 				            scrollTop: $('.sc').eq(i).offset().top - 80
 				        }, 1000);
 					}
@@ -244,8 +245,11 @@
 				function callback(){
 					let size = 0
 				    $('.sc').each(function(i){
-				    	if($(document).scrollTop() + $(window).height() - 80 > $(this).offset().top){
+				    	if($(document).scrollTop() + $(window).height() - 200 > $(this).offset().top){
 				    		size = i
+				    	}
+				    	if($(document).scrollTop() > $(document).height()- $(window).height() + 50){
+				    		size = 4
 				    	}
 				    })
 				    $('.nav-stick').removeClass('active').eq(size).addClass('active')
@@ -261,7 +265,7 @@
 				    if(timeoutRef){
 				        clearTimeout(timeoutRef);
 				    }
-				    timeoutRef = setTimeout(callback , 10);
+				    timeoutRef = setTimeout(callback , 50);
 				})
 				callback()
 			})()
