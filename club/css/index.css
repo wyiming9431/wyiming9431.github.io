@@ -217,11 +217,11 @@ section {
     margin-left: 15px;
   }
   .header .navbar .navbar-header .languages {
-    width: 18px;
+    width: 32px;
     float: right;
     position: relative;
-    margin-top: 14px;
-    margin-right: 15px;
+    margin-top: 24px;
+    margin-right: 30px;
     display: block;
   }
   .header .navbar .navbar-header .languages span img {
@@ -231,17 +231,17 @@ section {
     position: absolute;
     display: none;
     background: rgba(0, 0, 0, 0.8);
-    padding: 6px 15px;
-    width: 100px;
-    left: -15px;
-    padding-left: 15px;
+    padding: 12px 30px;
+    width: 200px;
+    left: -30px;
+    padding-left: 30px;
     top: 30px;
   }
   .header .navbar .navbar-header .languages ul li {
     color: white;
-    font-size: 14px;
+    font-size: 26px;
     list-style: none;
-    padding: 6px 0;
+    padding: 12px 0;
   }
   .header .navbar .navbar-header .languages ul li a {
     display: inline-block;
@@ -249,7 +249,7 @@ section {
     text-decoration: none !important;
   }
   .header .navbar .navbar-header .languages ul li a img {
-    width: 18px;
+    width: 36px;
     position: relative;
     top: -1px;
     margin-right: 30px;
@@ -514,9 +514,22 @@ footer .body .right p a:hover {
     width: auto;
     margin: 0 50px;
   }
+  h2 {
+    font-size: 60px;
+  }
+  .banner .about div.body h3 {
+    font-size: 36px;
+  }
+  .investmentCase .body ul li span {
+    font-size: 32px;
+  }
   .container-fluid.container {
     margin: 0;
     padding: 0;
+  }
+  .banner .about div.body p {
+    font-size: 32px;
+    line-height: 64px;
   }
   .navbar-toggle {
     display: block  !important;
@@ -528,6 +541,10 @@ footer .body .right p a:hover {
   }
   .navbar-nav > li {
     float: none;
+  }
+  .header .navbar ul li.nav-stick {
+    padding: 15px 30px;
+    font-size: 28px;
   }
   .navbar-collapse.collapse {
     display: none!important;
@@ -547,6 +564,7 @@ footer .body .right p a:hover {
     position: fixed;
     background: #3B3C4E;
     box-shadow: 0 0px 5px #111111;
+    padding: 30px 0;
   }
   .header .navbar .navbar-collapse {
     border-top: 0;
@@ -560,16 +578,16 @@ footer .body .right p a:hover {
     opacity: 0.9;
   }
   .header .navbar .navbar-header .navbar-toggle .icon-bar + .icon-bar {
-    margin-top: 5px;
+    margin-top: 10px;
   }
   .header .navbar .navbar-header .navbar-toggle span.icon-bar {
     background: white;
-    width: 21px;
-    height: 2.75px;
+    width: 42px;
+    height: 5px;
   }
   .header .navbar .navbar-header .navbar-brand {
-    height: 60px;
-    width: 150px;
+    height: 80px;
+    width: 200px;
     margin-left: 15px;
     position: absolute;
     top: -6px;
@@ -587,13 +605,13 @@ footer .body .right p a:hover {
     height: 100px;
     flex-basis: 33.3%;
     min-width: 200px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
   }
   .investmentCase .body ul li img {
     transform: scale(1);
   }
   .investmentCase .body ul li span {
-    bottom: -50px;
+    bottom: -100px;
   }
   .investmentCase .body ul li:hover img {
     opacity: 0.9;
@@ -613,10 +631,48 @@ footer .body .right p a:hover {
   .partner .body ul li a {
     padding: 0 10px;
     height: 65px;
+    font-size: 32px;
     line-height: 65px;
   }
   .partner .body ul:last-child li:first-child {
     flex: auto;
+  }
+  footer .body {
+    flex-flow: column;
+  }
+  footer .body .left,
+  footer .body .right {
+    margin: auto;
+    width: 90%;
+  }
+  footer .body .left p,
+  footer .body .right p {
+    font-size: 32px;
+  }
+  footer .body .left p {
+    position: relative;
+    padding-left: 70px;
+  }
+  footer .body .left p i {
+    position: absolute;
+    left: 0;
+    width: 52px;
+    line-height: 48px;
+    height: 52px;
+    text-align: center;
+    display: inline-block;
+  }
+  footer .body .left p i img {
+    width: 32px !important;
+  }
+  footer .body .right {
+    margin-top: 20px;
+  }
+  footer .body .right p {
+    text-align: center;
+  }
+  footer .body .right p a {
+    width: 60px;
   }
 }
 /* animation */
