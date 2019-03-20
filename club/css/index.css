@@ -3,6 +3,9 @@
  * start 2019-02-15 
  */
 /*全局*/
+body {
+  background: #282634;
+}
 ul,
 li {
   list-style: none;
@@ -77,14 +80,6 @@ section {
   color: white;
   transition: color 0.2s;
   position: relative;
-}
-.header .navbar ul li.nav-stick.active::after {
-  content: ' ';
-  position: absolute;
-  bottom: 0;
-  border-bottom: 2px solid red;
-  left: 10px;
-  right: 10px;
 }
 .header .navbar ul li.nav-stick span a {
   color: white;
@@ -191,13 +186,14 @@ section {
   background: #3B3C4E;
   box-shadow: 0 0px 5px #111111;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .header .navbar {
     border: 0;
     position: fixed;
+    background: #3B3C4E;
+    box-shadow: 0 0px 5px #111111;
   }
   .header .navbar .navbar-collapse {
-    background: #24282c;
     border-top: 0;
     opacity: 0.9;
   }
@@ -264,28 +260,16 @@ section {
   .header .navbar ul li.dropdown > a img {
     display: none;
   }
-  .header .navbar:hover,
   .header .navbar.active {
-    background: transparent;
-  }
-  .header .navbar.active {
-    box-shadow: 0 0 5px #888;
-    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0px 5px #111111;
+    background: #3B3C4E;
     border: 0;
-    padding-bottom: 0px;
-  }
-  .header .navbar.active .navbar-collapse.in {
-    background: rgba(36, 40, 44, 0.8);
-  }
-  .header .navbar.active .navbar-header .navbar-toggle span.icon-bar {
-    background: #20206A;
   }
   .header .navbar .navbar-nav {
     margin: 0 -15px;
     padding: 27px 0;
     z-index: 12;
     position: relative;
-    background: #24282c;
     opacity: 0.9;
   }
   .header .navbar .nav-mask {
@@ -308,7 +292,7 @@ section {
   }
 }
 .banner {
-  background: url(../image/banner.png) no-repeat center center;
+  background: url(../image/banner.jpg) no-repeat center center;
   background-size: cover;
 }
 .banner .home {
@@ -388,7 +372,7 @@ section {
   justify-content: center;
 }
 .investmentCase .body ul li img {
-  transform: scale(1);
+  transform: scale(0.8);
   opacity: 1;
   transition: all 0.5s;
 }
@@ -515,6 +499,16 @@ footer .body .right p a:hover {
     right: 10px;
   }
 }
+@media (min-width: 992px) {
+  .header .navbar ul li.nav-stick.active::after {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    border-bottom: 2px solid red;
+    left: 10px;
+    right: 10px;
+  }
+}
 @media (max-width: 991px) {
   .container {
     width: auto;
@@ -522,10 +516,66 @@ footer .body .right p a:hover {
   }
   .container-fluid.container {
     margin: 0;
+    padding: 0;
+  }
+  .navbar-toggle {
+    display: block  !important;
+    border: 0;
+  }
+  .navbar-header,
+  .navbar-nav {
+    float: none !important;
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+    height: 0!important;
+    padding-bottom: 0;
+    overflow: visible!important;
+    margin-top: 10px;
+  }
+  .collapse.in {
+    display: block !important;
+    height: auto!important;
+    background: #3B3C4E !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .header .navbar {
+    border: 0;
+    position: fixed;
+    background: #3B3C4E;
+    box-shadow: 0 0px 5px #111111;
+  }
+  .header .navbar .navbar-collapse {
+    border-top: 0;
+    opacity: 0.9;
+  }
+  .header .navbar .navbar-nav {
+    margin: 0 -15px;
+    padding: 27px 0;
+    z-index: 12;
+    position: relative;
+    opacity: 0.9;
+  }
+  .header .navbar .navbar-header .navbar-toggle .icon-bar + .icon-bar {
+    margin-top: 5px;
+  }
+  .header .navbar .navbar-header .navbar-toggle span.icon-bar {
+    background: white;
+    width: 21px;
+    height: 2.75px;
   }
   .header .navbar .navbar-header .navbar-brand {
-    height: 40px;
-    width: 100px;
+    height: 60px;
+    width: 150px;
+    margin-left: 15px;
+    position: absolute;
+    top: -6px;
+  }
+  .languages {
+    display: block;
   }
   .home {
     min-height: 100vh;
